@@ -26,11 +26,11 @@ class Transfer
       end
     end
   end
-  
+
 
   def reverse_transfer
     if @status == 'complete'
-      if self.receiver.valid? && sender.balance > amount
+      if self.receiver.valid?
         sender.balance += amount
         receiver.balance -= amount
         @status = 'reversed'
